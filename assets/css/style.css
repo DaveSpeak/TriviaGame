@@ -1,0 +1,42 @@
+body {
+	font-family:lucida console, lucida sans unicode,lucida, helvetica;
+/*	background:url(../images/star-wars-battlefront-x-wing.jpg) no-repeat center center fixed;
+*/	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size: cover;
+	color:black;
+}
+.jumbotron {
+
+}
+#selection {
+	width:200px;
+	background-color: 999;
+	border: solid 2px black;
+	margin:0 40%;
+}
+h1.text-center{
+	text-align:center;
+	font-size: 40px;
+	margin:0;
+	padding:0;
+}
+.questionArea h1{
+	text-align: center;
+}
+.response {
+	margin:20px 40%;
+	padding:0;
+	background-color: #999;
+	border: 2px solid #000;
+}
+.response:hover {
+	background-color: #fff;
+}
+img {
+	margin:0 40%;
+	padding:0;
+	align:center;
+}
+
