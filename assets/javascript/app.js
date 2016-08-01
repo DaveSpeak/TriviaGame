@@ -1,18 +1,30 @@
 	// VARIABLES
 	// ==========================================================================
 	var trivia = [
-		{question:"What is the answer 1?",
-		 answer: ["Answer # 1", "Answer # 2", "Answer # 3",  "Answer # 4"],
-		 correct:3, picture:"Darth-Maul.jpg", isAsked:false},
-		{question:"What is the answer 2?",
-		 answer: ["Answer # 1", "Answer # 2", "Answer # 3",  "Answer # 4"],
-		 correct:2, picture:"Darth-Sidious.jpg", isAsked:false},
-		{question:"What is the answer 3?",
-		 answer: ["Answer # 1", "Answer # 2", "Answer # 3",  "Answer # 4"],
-		 correct:1, picture:"Luke-Skywalker.jpg", isAsked:false},
-		{question:"What is the answer 4?",
-		 answer: ["Answer # 1", "Answer # 2", "Answer # 3",  "Answer # 4"],
-		 correct:0, picture:"Obi-Wan.jpg", isAsked:false}
+		{question:"Who wrote Game of Thrones?",
+		 answer: ["Robert Heinlein", "George R.R. Martin", "Kathleen Kennedy",  "Peter Dinklage"],
+		 correct:1, picture:"George-RR-Martin.jpg", isAsked:false},
+		{question:"How does Tywin Lannister die?",
+		 answer: ["He doesn't", "He's beheaded by Joffrey", "Duel with Ned Stark",  "Shot with a crossbow"],
+		 correct:3, picture:"Tywin-death.jpg", isAsked:false},
+		{question:"Who is Joffrey's father?",
+		 answer: ["Robert Baratheon", "Ned Stark", "Jamie Lannister",  "George-RR-Martin"],
+		 correct:2, picture:"Jamie-Lannister.jpg", isAsked:false},
+		{question:"Which Game of Thrones actress was a bond girl?",
+		 answer: ["Diana Rigg", "Natalie Dormer", "Michelle Fairley",  "Emilia Clark"],
+		 correct:0, picture:"Diana-Rigg.jpg", isAsked:false},
+		{question:"Which charater is not a Stark?",
+		 answer: ["Ned", "Cersei", "Ayra",  "Jon"],
+		 correct:1, picture:"Cersei-Lannister.jpg", isAsked:false},
+		{question:"What two things does Tyrion do?",
+		 answer: ["Makes money and spends it", "Fights and makes love", "Drinks and knows things",  "He only does one thing"],
+		 correct:2, picture:"Tyrion-Lannister.gif", isAsked:false},
+		{question:"Who is Daenerys Targaryen's brother?",
+		 answer: ["Tywin", "Ned", "The Hound",  "Viserys"],
+		 correct:3, picture:"Viserys-Targeryen.jpg", isAsked:false},
+		{question:"Which character does Emilia Clark play?",
+		 answer: ["Ayra Stark", "Cersei Lannister", "Daenerys Targaryen",  "Yara Greyjoy"],
+		 correct:2, picture:"Daenerys-Targaryen.jpg", isAsked:false}
 	]
 	var correct = 0;
 	var wrong = 0;
@@ -42,13 +54,13 @@
 		time = 0;
         counter = setInterval(increment, 1000);
 		var triviaQuestion="<div class='questionArea'><br><h1>"+trivia[q].question+"</h1><br><ul>"+
-		"<li>"+"<button class='response' value=0>"+trivia[q].answer[0]+"</button></li>"+
-		"<li>"+"<button class='response' value=1>"+trivia[q].answer[1]+"</button></li>"+
-		"<li>"+"<button class='response' value=2>"+trivia[q].answer[2]+"</button></li>"+
-		"<li>"+"<button class='response' value=3>"+trivia[q].answer[3]+"</button></li>"+
+		"<li>"+"<button class='btn response' value=0><h3>"+trivia[q].answer[0]+"</h3></button></li>"+
+		"<li>"+"<button class='btn response' value=1><h3>"+trivia[q].answer[1]+"</h3></button></li>"+
+		"<li>"+"<button class='btn response' value=2><h3>"+trivia[q].answer[2]+"</h3></button></li>"+
+		"<li>"+"<button class='btn response' value=3><h3>"+trivia[q].answer[3]+"</h3></button></li>"+
 		"</ul></div>"
 		$("#gameArea").html(triviaQuestion);
-		var timeDisplay="<div><h1>Time Remaining: "+(maxTime-time)+" seconds</h1></div>";
+		var timeDisplay="<div id='timeRem'><h1>Time Remaining: "+(maxTime-time)+" seconds</h1></div>";
         $('#time').html(timeDisplay);
 		trivia[q].isAsked=true;
 		$("button").on('click',function(){
@@ -66,10 +78,10 @@
 	function increment(){
 		time++;
 		if (maxTime-time < 10){
-			var timeDisplay="<div><h1>Time Remaining: &nbsp"+(maxTime-time)+" seconds</h1></div>";
+			var timeDisplay="<div id='timeRem'><h1>Time Remaining: &nbsp"+(maxTime-time)+" seconds</h1></div>";
 
 		}else {
-			var timeDisplay="<div><h1>Time Remaining: "+(maxTime-time)+" seconds</h1></div>";
+			var timeDisplay="<div id='timeRem'><h1>Time Remaining: "+(maxTime-time)+" seconds</h1></div>";
 		}
 		$('#time').empty();
         $('#time').html(timeDisplay);
@@ -107,13 +119,14 @@
 	}
 	function finishGame(){
 		$(".questionArea").empty();
-		var complete ='<div class="questionArea"><br><h1>Game Over!!</h1><br><h1>Correct: '+correct+
-		'</h1><br><h1>Wrong: '+wrong+'</h1><br><h1>Unanswered: '+unanswered+'<br><br><button id="selection">Restart</button></div>';
+		var complete ='<div id="results"><br><h1>Game Over!!</h1><br><h1>Correct: '+correct+
+		'</h1><br><h1>Wrong: '+wrong+'</h1><br><h1>Unanswered: '+unanswered+'</h1><br><br><button class="btn" id="restart">Restart</button></div>';
 		$('#gameArea').html(complete);
 		correct=0;
 		wrong=0;
+		unanswered=0;
 		for (var i=0;i<trivia.length;i++){
 			trivia[i].isAsked=false;
 		}
-		$('#selection').on('click', selectQuestion);
+		$('#restart').on('click', selectQuestion);
 	}

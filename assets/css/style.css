@@ -1,20 +1,37 @@
 body {
-	font-family:lucida console, lucida sans unicode,lucida, helvetica;
-/*	background:url(../images/star-wars-battlefront-x-wing.jpg) no-repeat center center fixed;
-*/	-webkit-background-size:cover;
+	background:url(../images/Game-of-Thrones-Logo.jpg) no-repeat center center fixed;
+	-webkit-background-size:cover;
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	background-size: cover;
-	color:black;
+	color:#b30000;
+	font-family: TrajanusBricks, helvetica, lucida;
 }
 .jumbotron {
-
+	background:url(../images/Game-of-Thrones-Logo.jpg) no-repeat center center fixed;
+	color:#000;
 }
 #selection {
-	width:200px;
-	background-color: 999;
-	border: solid 2px black;
-	margin:0 40%;
+	background-color: #000;
+	border: solid 3px #888;
+	width:25%;
+	margin:0 35%;
+	padding:0;
+}
+#selection:hover{
+	background-color: #555;
+	border: solid 5px #000;
+}
+#restart {
+	background-color: #000;
+	border: solid 3px #888;
+	width:60%;
+	margin:0 20%;
+	padding:10px;
+}
+#restart:hover {
+	background-color: #555;
+	border: solid 5px #000;
 }
 h1.text-center{
 	text-align:center;
@@ -23,20 +40,70 @@ h1.text-center{
 	padding:0;
 }
 .questionArea h1{
+	width:60%;
+	margin:0 25%;
 	text-align: center;
+	background-color: #000;
+	padding:20px 0;
+/*	margin:0;
+*/	border: solid 3px #888;
+	border-radius:10px;
+}
+#gameArea {
+	padding:0;
+	margin:0;
 }
 .response {
-	margin:20px 40%;
-	padding:0;
-	background-color: #999;
-	border: 2px solid #000;
+	margin:20px 30%;
+	padding:0 10px;
+	background-color: #000;
+	color:#b30000;
+	border: solid 3px #888;
 }
 .response:hover {
-	background-color: #fff;
+	background-color: #555;
+	border: solid 5px #000;
 }
 img {
-	margin:0 40%;
+	margin:0 35%;
 	padding:0;
-	align:center;
 }
-
+@font-face {
+	font-family: TrajanusBricks;
+	src:url(../font/TrajanusBricks.ttf);
+}
+#timeRem{
+	background-color: #000;
+	padding:1px;
+	margin:0 15%;
+	width:75%;
+	border: solid 3px #888;
+	border-radius:10px;
+	text-align: center;
+}
+#time{
+	margin:0;
+	padding:0;
+}
+#results {
+	width:40%;
+	margin:0 25%;
+	padding:0;
+}
+#results h1{
+	padding:10px;
+	margin:0;
+	text-align:center;
+	background-color: #000;
+	border: solid 3px #888;
+	border-radius:10px;
+}
+.row {
+	margin:0;
+	padding:0;
+}
+/*.btn-default {
+	color:#b30000;
+	background-color: #000;
+}
+*/
