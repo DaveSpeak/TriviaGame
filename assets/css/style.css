@@ -40,13 +40,12 @@ h1.text-center{
 	padding:0;
 }
 .questionArea h1{
-	width:60%;
-	margin:0 25%;
+	width:75%;
+	margin:0 13%;
 	text-align: center;
 	background-color: #000;
 	padding:20px 0;
-/*	margin:0;
-*/	border: solid 3px #888;
+	border: solid 3px #888;
 	border-radius:10px;
 }
 #gameArea {
@@ -75,7 +74,7 @@ img {
 #timeRem{
 	background-color: #000;
 	padding:1px;
-	margin:0 15%;
+	margin:0 13%;
 	width:75%;
 	border: solid 3px #888;
 	border-radius:10px;
@@ -102,8 +101,3 @@ img {
 	margin:0;
 	padding:0;
 }
-/*.btn-default {
-	color:#b30000;
-	background-color: #000;
-}
-*/
