@@ -121,7 +121,7 @@
 			var unans=$('<div>');
 			unans.addClass('questionArea');
 			unans.append('<br>','<h1>'+"Time\'s up!!!",'<br>','<h1>'+"The correct answer is: "+
-			triviaGame.info.questAns[triviaGame.q].answer[triviaGame.info.questAns[triviaGame.q].correct],
+			triviaGame.info.questAns[triviaGame.q].answer[triviaGame.info.questAns[triviaGame.q].correct], '<br>',
 			$('<img>').attr('src','assets/images/'+triviaGame.info.questAns[triviaGame.q].picture));
 			$('#gameArea').html(unans);
 			triviaGame.unanswered++;
